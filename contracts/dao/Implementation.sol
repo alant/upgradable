@@ -41,12 +41,13 @@ contract Implementation is Setters, Permission, Upgradeable {
     function incentivize(address account, uint256 amount) private {
         // mintToAccount(account, amount);
         // dollar().mint(account, amount);
-         y = dollar().sayHi();
+        //  y = dollar().sayHi();
 //        y = 42;
         emit Incentivization(account, amount);
     }
 
-    function say42() public view returns (int) {
+    function say42() public returns (int) {
+        y = dollar().sayHi();
         return y;
     }
 }

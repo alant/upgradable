@@ -1,6 +1,6 @@
 const Implementation = artifacts.require("Implementation");
 const Dollar = artifacts.require("Dollar");
-const { deployProxy } = require('@openzeppelin/truffle-upgrades');
+// const { deployProxy } = require('@openzeppelin/truffle-upgrades');
 const Root = artifacts.require("Root");
 const Upgradeable = artifacts.require("Upgradeable");
 
