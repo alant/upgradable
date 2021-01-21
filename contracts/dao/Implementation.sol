@@ -21,9 +21,11 @@ import "@openzeppelin/contracts/math/SafeMath.sol";
 import "./Permission.sol";
 import "./Upgradeable.sol";
 import "../Constants.sol";
+//import "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol";
 
 contract Implementation is Setters, Permission, Upgradeable {
     using SafeMath for uint256;
+    int public y;
 
     event Advance(uint256 indexed epoch, uint256 block, uint256 timestamp);
     event Incentivization(address indexed account, uint256 amount);
@@ -31,7 +33,7 @@ contract Implementation is Setters, Permission, Upgradeable {
     function initialize() initializer public {
         // Reward committer
         incentivize(msg.sender, Constants.getAdvanceIncentive());
-        // dollar().sayHi();
+//        dollar().sayHi();
         // Dev rewards
 
     }
@@ -39,11 +41,12 @@ contract Implementation is Setters, Permission, Upgradeable {
     function incentivize(address account, uint256 amount) private {
         // mintToAccount(account, amount);
         // dollar().mint(account, amount);
-        // dollar().sayHi();
+         y = dollar().sayHi();
+//        y = 42;
         emit Incentivization(account, amount);
     }
 
     function say42() public view returns (int) {
-        return dollar().sayHi();
+        return y;
     }
 }
